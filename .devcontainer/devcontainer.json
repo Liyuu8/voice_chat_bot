@@ -1,0 +1,23 @@
+{
+  "name": "Voice Chat Bot",
+  "dockerComposeFile": [
+    "docker-compose.yml"
+  ],
+  "service": "app",
+  "workspaceFolder": "/app/main",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.formatOnSave": true,
+        "[python]": {
+          "editor.defaultFormatter": "ms-python.autopep8"
+        }
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.autopep8",
+        "MS-CEINTL.vscode-language-pack-ja"
+      ]
+    }
+  }
+}
