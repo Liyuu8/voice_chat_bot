@@ -1,16 +1,14 @@
-version: '3'
+version: '3.3'
 services:
   app:
-    # コンテナ名
     container_name: 'python3'
-    # ComposeFileを実行し、ビルドされるときのpath
-    build: .
+    build: . # ComposeFileを実行し、ビルドされるときのpath
     tty: true
-    # ホスト側のポート：コンテナのポート
     ports:
-      - '3000:3000'
-    # ホスト側のappをコンテナのappにマウント
+      - '3000:3000' # ホスト側のポート：コンテナのポート
     volumes:
-      - ../app:/app
-    # 起動時のカレントフォルダ
-    working_dir: /app
+      - ../app:/app # ホスト側のappをコンテナのappにマウント
+      - ~/.config/pulse:/root/.config/pulse
+    working_dir: /app # 起動時のカレントフォルダ
+    environment:
+      - PULSE_SERVER=docker.for.mac.localhost
